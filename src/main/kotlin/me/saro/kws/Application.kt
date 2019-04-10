@@ -1,10 +1,9 @@
-package me.saro.nabi
+package me.saro.kws
 
 import me.saro.commons.Converter
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
-import java.util.*
 
 @SpringBootApplication
 class Application : CommandLineRunner {

@@ -1,4 +1,4 @@
-package me.saro.nabi
+package me.saro.kws
 
 import org.junit.Test
 import org.junit.runner.RunWith

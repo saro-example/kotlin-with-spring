@@ -3,4 +3,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'nabi'
+rootProject.name = 'kotlin-with-spring'

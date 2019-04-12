@@ -5,6 +5,7 @@ import me.saro.commons.Utils
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseBody
 import javax.servlet.http.HttpServletRequest
 
@@ -23,6 +24,14 @@ class Ex03EnumWhenController {
         Domain.SARO, Domain.GS -> "사로 서비스"
         Domain.LOCAL -> "로컬"
         Domain.DEF -> "기본값"
+        else -> "기타"
+    }
+
+    @GetMapping("/2")
+    @ResponseBody
+    fun no2(req: HttpServletRequest, @RequestParam("v", required = false) v: String?) = when {
+        v == null -> "v의 값이 없음"
+        v == "A" || v == "B" || v == "C" -> "v는 A,B,C 중 하나임"
         else -> "기타"
     }
 

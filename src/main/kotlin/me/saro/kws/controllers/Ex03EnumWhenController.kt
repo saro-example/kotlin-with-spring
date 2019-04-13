@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody
 import javax.servlet.http.HttpServletRequest
 
 
-@Controller()
+@Controller
 @RequestMapping("/ex03")
 class Ex03EnumWhenController {
 

@@ -47,4 +47,35 @@ class Ex02VarValMapListController {
         return sb.toString();
     }
 
+    @GetMapping("/4")
+    @ResponseBody
+    fun no4(req: HttpServletRequest): String {
+
+        val sb = StringBuilder();
+        var list = arrayListOf("가", "나", "다", "A", "B")
+
+        for ((i, s) in list.withIndex()) {
+            sb.append("[$i] $s<br/>")
+        }
+
+        return sb.toString();
+    }
+
+    @GetMapping("/5")
+    @ResponseBody
+    // ('가' <= '망' && '망' <= '힣') 과 동일
+    fun no5(req: HttpServletRequest) = ('망' in '가'..'힣')
+
+    @GetMapping("/6")
+    @ResponseBody
+    fun no6(req: HttpServletRequest) = ("jpg" in setOf("jpg", "png", "gif"))
+
+    @GetMapping("/7")
+    @ResponseBody
+    // "예제단어"는 사전 순서로 "부트"와 "코틀린" 사이에 있다.
+    fun no7(req: HttpServletRequest) = ("예제단어" in "부트".."코틀린")
+
+    @GetMapping("/8")
+    @ResponseBody // 37은 20과 100사이 존재하지 않는다 = 거짓
+    fun no8(req: HttpServletRequest) = (37 !in 20..100)
 }
